@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function issue1() {
+            let text = "";
+            let i = 0;
+            for (i = 0;i < 5; i++) {
+                text += 'The number is ' + i + "<br>";
+            }
+            document.getElementById("issue1").innerHTML = text;
+        }
+
+        function issue2() {
+            let input = document.getElementById("issue2").value;
+            // console.log(input);
+            let checkIfNumberOnly = input.match(/^[0-9]*$/);
+            if (checkIfNumberOnly != null && parseInt(input) > 0) {
+                let i = 0;
+                let sum = 0;
+                for (i = 1; i <= parseInt(input); i++) {
+                    sum += i;
+                }
+                console.log("Sum is " + sum);
+            } else{
+                console.log("Enter a numeric number bigger than 0, please");
+            }
+            }
+
+    </script>
+</head>
+<body onload="issue1()">
+    <h1> BAI 1</h1>
+    <p id="issue1"></p>
+
+    <h1> BAI 2 </h1>
+    <input id="issue2" type="text" placeholder="Nhap 1 so bat ki vao day">
+    <button type="button" id="testButton" onclick="issue2()">Kiem tra</button>
+
+
+</body>
+</html>
